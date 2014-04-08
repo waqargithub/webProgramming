@@ -1,0 +1,87 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head>
+    <title>
+      ADD TITLE
+    </title>    
+    <meta charset="utf-8" />
+
+ <!-- This is where your link tag goes when linking to an external style sheet.
+ 
+To link to an external style sheet 
+ 
+1. Replace the filename in all caps with the name of your file.
+2. Then for line below delete <!-- at left end of line
+3. On the right end of the line delete the three characters that are after the colon on this line: -->
+
+<!-- <link rel="stylesheet" href="THENAMEOFYOURFILE.css" type="text/css" /> -->
+ 
+<!--The scripts below pull in code from the javascript files that:
+1. Hold code for the printBulletList function
+2. Hold value/text/content of bullets to be printed.
+-->    
+
+    <script type="text/javascript" src="jsFiles/printBulletList.js">
+    </script>
+    
+    <script type="text/javascript" src="jsFiles/bulletArrayDefinitions.js">
+    </script>
+
+      
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    //Any javascript code defined in the head goes here
+    /* ]]> */
+    </script>    
+    
+</head>
+
+<body> 
+ <div>
+    <h2>Summary</h2>
+    
+    <p>This web page demonstrates a javascript function that simplifies printing bullet lists.<br>
+    <br>
+    
+<script type="text/javascript">
+/* <![CDATA[ */
+
+//Signature for printBulletList function:
+//printBulletList("textForHeading", headingLevelForHTML, nameOfArrayWithBullets, noOfColumns);
+
+//If no heading is desired, enter "" (empty string) for textForHeading, and 0 for headingLevelForHTML.
+
+/*As defined in bulletArrayDefinitions.js
+ *benefitArray = new Array (
+    "All user has to do to create a bullet list is to edit a text file that provides content of each bullet. See bulletArrayDefinitions.js",
+    "The function automatically determines how many bullets there are and generates the html code",
+    "Adding bullets is as easy as adding its value into the text file in sequence.",
+    "It allows an easy way to print bullet list in columns.",
+    "For convenience, user may add heading and heading level (h1, h2, etc) via the function, or",
+    "leave them blank and add them separately."
+);*/
+printBulletList("Benefits", 2, benefitsArray, 1);
+
+document.write("<h2>Bullet Lists Print Below</h2>");
+//As defined in bulletArrayDefinitions.js
+//firstBulletArray = new Array("bullet1", "bullet2", "bullet3", "bullet4", "bullet5", "bullet6", "bullet7", "bullet8");      
+printBulletList("First Bullet Array with 5 Columns", 3, firstBulletArray, 5);
+
+//As defined in bulletArrayDefinitions.js
+//secondBulletArray = new Array("bulletA", "bulletB", "bulletC", "bulletD", "bulletE", "bulletF", "bulletG", "bulletH");
+printBulletList("Second Bullet Array with 6 Columns", 3, secondBulletArray, 6);
+printBulletList("Second Bullet Array with 1 Column", 3, secondBulletArray, 1);
+
+
+//As defined in bulletArrayDefinitions.js
+// nameArray = new Array("Amanda", "Barbara", "Christen", Dee", "Elizabeth", "Fawn", "Gail", "Helena");
+printBulletList("Names Array with 3 Columns", 3, nameArray, 3);
+
+//Go to bulletArrayDefinitions.js and make changes to bullet arrays and see what happens.
+
+/* ]]> */
+</script>
+ </div>
+</body>
+</html>
